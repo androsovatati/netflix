@@ -1,0 +1,41 @@
+<div class="movie-list__result" *ngIf="(movies | async)?.length > 0">
+
+    <div class="result-panel">
+        <div class="result-panel__container">
+            <div class="movies-count">
+                {{(movies | async)?.length}} movies found
+            </div>
+            <div class="sort-filter">
+                <span class="sort-filter__title">Sort by: </span>
+                <button md-button class="sort-filter__item_release" color="{{ sortType === 'release' ? 'primary' : '' }}" (click)="sortType = 'release'">
+                    release
+                </button>
+                <button md-button class="sort-filter__item_rating" color="{{ sortType === 'rating' ? 'primary' : '' }}" (click)="sortType = 'rating'">
+                    rating
+                </button>
+                <button md-button class="sort-filter__item_asc" (click)="ascending = !ascending">
+                    <md-icon>{{ ascending ? 'arrow_downward' : 'arrow_upward' }}</md-icon>
+                </button>
+            </div>
+            <div class="view-filter">
+                <div class="view-filter__title">View: </div>
+                <button md-icon-button class="view-filter__item_list" color="{{ gridType === 'list' ? 'primary' : '' }}" (click)="gridType = 'list'"> 
+                    <md-icon>view_list</md-icon>
+                </button>
+                <button md-icon-button class="view-filter__item_tile" color="{{ gridType === 'tile' ? 'primary' : '' }}" color="primary" (click)="gridType = 'tile'">
+                    <md-icon>view_comfy</md-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="result-body">
+        <div class="result-body__movies" ngClass="{{ (gridType == 'list') ? 'result-body__movies_list' : 'result-body__movies_tile'}}">
+            <netflix-movies-list-item [movie]="movie" [grid]="gridType" *ngFor="let movie of movies | async | moviesSort : sortType : ascending"></netflix-movies-list-item>        
+        </div>
+    </div>
+</div>
+
+<div class="movie-list__empty" *ngIf="(movies | async)?.length == 0">
+    No films found
+</div>

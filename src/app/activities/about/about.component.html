@@ -1,0 +1,3 @@
+<netflix-contacts-view *ngIf="!editMode" [contacts]="contacts" (editModeChanged)="editMode = true"></netflix-contacts-view>
+
+<netflix-contacts-edit *ngIf="editMode" [contacts]="contacts" (buttonPressed)="onButtonPressed($event)"></netflix-contacts-edit>

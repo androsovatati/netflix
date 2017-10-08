@@ -1,0 +1,20 @@
+<div class="navbar">
+  <div class="navbar__wrapper">
+        <div class="navbar__content">
+
+            <div class="navbar__links">
+                <h4 class="navbar__logo" [routerLink]="['movie']">netflixroulette</h4>
+                <div class="navbar__about" [routerLink]="['about']" *ngIf="!isAboutPage()">
+                    <md-icon>info_outline</md-icon>
+                    <span>about</span>
+                </div>
+            </div>
+
+            <netflix-search *ngIf="isHomePage()"></netflix-search>
+
+            <button md-raised-button color="primary" [routerLink]="['/']" *ngIf="!isHomePage()">
+                   Search
+            </button>
+        </div>
+  </div>
+</div>

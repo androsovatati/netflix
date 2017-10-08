@@ -1,0 +1,11 @@
+<div class="search-block__title">Find your movie</div>
+
+<div class="search-block__content">
+    <div class="search-block__input">
+        <input autofocus name="query" [(ngModel)]="query" (keyup.enter)="search()" placeholder="Enter the title...">    
+    </div>
+    <div class="search-block__button">
+        <button md-raised-button color="primary" (click)="search()">Search</button>
+    </div>
+</div>
+

@@ -1,0 +1,21 @@
+md-card {
+    width: 500px;
+    margin: 50px auto;
+}
+
+md-card-actions {
+    text-align: right;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    width: 130px;
+}
+
+.field__value {
+    color: #000 !important;
+}

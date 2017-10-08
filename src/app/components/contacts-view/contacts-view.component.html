@@ -1,0 +1,30 @@
+<md-card>
+
+    <md-card-title>
+        Contacts
+    </md-card-title>
+
+    <md-card-content>
+        <div class="field">
+            <label>Full name:</label>
+            <p class="field__value">{{contacts.name}}</p>
+        </div>
+        <div class="field">
+            <label>E-mail:</label>
+            <p class="field__value">
+                <a [href]="'mailto:' + contacts.email">{{contacts.email}}</a>
+            </p>
+        </div>
+        <div class="field">
+            <label>GitLab project link:</label>
+            <p class="field__value">
+                <a [href]="contacts.link" target="_blank">{{contacts.link}}</a>
+            </p>
+        </div>
+    </md-card-content>
+
+    <md-card-actions>
+        <button md-button (click)="toggleEditMode()">Edit</button>
+    </md-card-actions>
+
+</md-card>

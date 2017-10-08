@@ -1,0 +1,22 @@
+md-card {
+    width: 500px;
+    margin: 50px auto;
+}
+
+md-card-actions {
+    text-align: right;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    height: 45px;
+}
+
+label {
+    width: 130px;
+}
+
+md-form-field {
+    flex-grow: 1;
+}

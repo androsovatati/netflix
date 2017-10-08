@@ -1,0 +1,70 @@
+@import '../../../assets/styles/variables';
+
+.movie-list {
+
+    &__wrapper {
+        background: #212121;
+    }
+
+    &__empty {
+        width: 100%;
+        color: #838383;
+        font-size: 24px;
+        text-align: center;
+        line-height: 5;
+    }
+}
+
+.result {
+    &-panel {
+        background: $background-light-color;
+        color: $font-dark-color; 
+
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: $container-max-width;
+            margin: 0 auto;
+            padding: 10px $container-padding;
+        }       
+    }
+
+    &-body {
+        max-width: $container-max-width;
+        margin: 0 auto;
+        padding: $container-padding;
+
+        &__movies {
+            display: flex;
+
+            &_list {
+                flex-direction: column;
+            }
+
+            &_tile {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: stretch;
+            }
+        }
+    }
+}
+
+.movies-count {
+    flex-grow: 1;
+}
+
+.sort-filter {
+    button {
+        min-width: 30px;
+        padding: 0 10px; 
+    }
+}
+
+.view-filter {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}

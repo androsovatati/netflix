@@ -1,0 +1,18 @@
+<div class="movie" [ngClass]="grid" [routerLink]="['/movie', movie.show.id]">
+    <div class="movie__img">
+        <img [src]="movie.show?.image?.medium || noImage" [alt]="movie.show.name">
+    </div>
+    <div class="movie__description">
+        <div class="movie__title">
+            {{movie.show.name}}
+        </div>
+        <div class="movie__subtitle">
+            <div class="movie__rating">
+                Rating: {{movie.show.rating.average || '-'}}
+            </div>
+            <div class="movie__release">
+                Release date: {{movie.show.premiered | date: 'dd.MM.yyyy'}}
+            </div>
+        </div>
+    </div>
+</div>

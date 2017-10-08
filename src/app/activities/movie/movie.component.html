@@ -1,0 +1,34 @@
+<div class="movie" *ngIf="movie">
+
+  <div class="movie__img">
+      <img [src]="movie.image?.original">
+  </div>
+
+  <div class="movie__info">
+    <div class="movie__title-container">
+      <div class="movie__title">{{movie.name}}</div>
+      <div class="movie__rating" *ngIf="movie.rating > 0">{{movie.rating?.average}}</div>
+    </div>
+
+    <div class="movie__released">
+      Released on {{movie.updated | date}}
+    </div>
+
+    <div class="movie__summary">
+      <p [innerHTML]="summary"></p>
+    </div>
+
+    <div class="movie___seasons">
+      <div class="seasons__title">Seasons:</div>
+      <md-list>
+        <md-list-item *ngFor="let season of seasons">
+          <img mdListAvatar [src]="season.image?.medium" alt="Image">
+          <h3 mdLine> {{season.number}} </h3>
+          <p mdLine>
+            <span> {{season.premiereDate}} </span>
+          </p>
+        </md-list-item>
+      </md-list>
+    </div>
+  </div>
+</div>

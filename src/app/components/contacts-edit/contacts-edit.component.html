@@ -1,0 +1,33 @@
+<md-card>
+
+    <md-card-title>
+        Edit contacts
+    </md-card-title>
+
+    <md-card-content>
+        <div class="field">
+            <label>Full name:</label>
+            <md-form-field>
+                <input mdInput name="name" [(ngModel)]="contacts.name">
+            </md-form-field>
+        </div>
+        <div class="field">
+            <label>E-mail:</label>
+            <md-form-field>
+                <input mdInput name="email" [(ngModel)]="contacts.email">
+            </md-form-field>
+        </div>
+        <div class="field">
+            <label>GitLab project link:</label>
+            <md-form-field>
+                <input mdInput name="link" [(ngModel)]="contacts.link">
+            </md-form-field>
+        </div>
+    </md-card-content>
+
+    <md-card-actions>
+        <button md-button (click)="onClick('cancel')">Cancel</button>
+        <button md-button (click)="onClick('save')">Save</button>
+    </md-card-actions>
+
+</md-card>

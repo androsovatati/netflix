@@ -1,0 +1,47 @@
+@import '../../../assets/styles/variables';
+
+.movie {
+  display: flex;
+  justify-content: center;
+  max-width: $container-max-width;
+  margin: 0 auto;
+
+  &__img {
+    width: 40%;
+    box-sizing: border-box;
+    padding: 50px 100px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    width: 60%;
+    box-sizing: border-box;
+    padding: 50px 50px;
+  }
+
+  &__title {
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+
+    color: $accent-color;
+    font-size: 40px;
+  }
+
+  &__rating {
+    align-self: flex-start;
+    padding: 5px 10px;
+    margin: 15px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid #fff;
+  }
+}
+
+.seasons__title {
+  color: $accent-color;
+  font-size: 24px;
+}
